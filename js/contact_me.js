@@ -23,7 +23,7 @@ $(function() {
             }
             $.ajax({
                 url: "http://formspree.io/thomas.sauvajon@gmail.com",
-                type: "POST",
+                method: "POST",
                 data: {
                     // name: name,
                     // phone: phone,
