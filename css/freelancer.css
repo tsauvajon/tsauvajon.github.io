@@ -204,7 +204,7 @@ section.success {
 #portfolio .portfolio-item .portfolio-link {
   display: block;
   position: relative;
-  max-width: 300px;
+  max-width: 400px;
   margin: 0 auto;
 }
 #portfolio .portfolio-item .portfolio-link .caption {
@@ -502,4 +502,8 @@ fieldset[disabled] .btn-success.active {
 .portfolio-modal .modal-backdrop {
   opacity: 0;
   display: none;
+}
+
+img.img-responsive.img-portfolio{
+  max-width: 30%;
 }
