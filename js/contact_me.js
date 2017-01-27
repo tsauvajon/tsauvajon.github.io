@@ -15,7 +15,7 @@ $(function() {
             var email = $("input#email").val();
             var phone = $("input#phone").val();
             var message = $("textarea#message").val();
-            var text = "Name: " + name + "<br>Message : " + message + "<br>Phone :" + phone;
+            var text = "Name: " + name + "\r\nPhone :" + phone + "\r\nMessage : " + message;
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
