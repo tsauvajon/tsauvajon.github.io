@@ -279,19 +279,19 @@
 		}
 	};
 
-	var servicesAnimate = function() {
-		var services = $('#fh5co-services');
-		if ( services.length > 0 ) {	
+	var hobbiesAnimate = function() {
+		var hobbies = $('#fh5co-hobbies');
+		if ( hobbies.length > 0 ) {	
 
-			services.waypoint( function( direction ) {
+			hobbies.waypoint( function( direction ) {
 										
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 
-					var sec = services.find('.to-animate').length,
+					var sec = hobbies.find('.to-animate').length,
 						sec = parseInt((sec * 200) + 400);
 
 					setTimeout(function() {
-						services.find('.to-animate').each(function( k ) {
+						hobbies.find('.to-animate').each(function( k ) {
 							var el = $(this);
 							
 							setTimeout ( function () {
@@ -302,7 +302,50 @@
 					}, 200);
 
 					setTimeout(function() {
-						services.find('.to-animate-2').each(function( k ) {
+						hobbies.find('.to-animate-2').each(function( k ) {
+							var el = $(this);
+							
+							setTimeout ( function () {
+								el.addClass('bounceIn animated');
+							},  k * 200, 'easeInOutExpo' );
+							
+						});
+					}, sec);
+
+
+					
+					$(this.element).addClass('animated');
+						
+				}
+			} , { offset: '80%' } );
+
+		}
+	};
+
+	var languagesAnimate = function() {
+		var languages = $('#fh5co-languages');
+		if ( languages.length > 0 ) {	
+
+			languages.waypoint( function( direction ) {
+										
+				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
+
+					var sec = languages.find('.to-animate').length,
+						sec = parseInt((sec * 200) + 400);
+
+					setTimeout(function() {
+						languages.find('.to-animate').each(function( k ) {
+							var el = $(this);
+							
+							setTimeout ( function () {
+								el.addClass('fadeInUp animated');
+							},  k * 200, 'easeInOutExpo' );
+							
+						});
+					}, 200);
+
+					setTimeout(function() {
+						languages.find('.to-animate-2').each(function( k ) {
 							var el = $(this);
 							
 							setTimeout ( function () {
@@ -462,7 +505,8 @@
 		introAnimate();
 		workAnimate();
 		testimonialAnimate();
-		servicesAnimate();
+		hobbiesAnimate();
+		languagesAnimate();
 		aboutAnimate();
 		countersAnimate();
 		contactAnimate();
