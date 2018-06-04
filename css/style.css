@@ -610,11 +610,11 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.1);
 }
 
-#fh5co-hobbies, #fh5co-languages, #fh5co-testimonials, #fh5co-counters, #fh5co-work, #fh5co-contact, #fh5co-about {
+#fh5co-hobbies, #fh5co-languages, #fh5co-testimonials, #fh5co-media, #fh5co-counters, #fh5co-work, #fh5co-contact, #fh5co-about {
   padding: 4em 0;
 }
 @media screen and (max-width: 768px) {
-  #fh5co-hobbies, #fh5co-languages, #fh5co-testimonials, #fh5co-counters, #fh5co-work, #fh5co-contact, #fh5co-about {
+  #fh5co-hobbies, #fh5co-languages, #fh5co-testimonials, #fh5co-media, #fh5co-counters, #fh5co-work, #fh5co-contact, #fh5co-about {
     padding: 2em 0;
   }
 }
@@ -845,18 +845,22 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-#fh5co-testimonials .box-testimony {
+#fh5co-testimonials .box-testimony, #fh5co-media .box-testimony {
   margin-bottom: 2em;
   float: left;
 }
-#fh5co-testimonials .box-testimony a {
+#fh5co-testimonials .box-testimony a, #fh5co-media .box-testimony a {
   color: rgba(255, 255, 255, 0.5);
 }
 #fh5co-testimonials .box-testimony a:hover, #fh5co-testimonials .box-testimony a:focus, #fh5co-testimonials .box-testimony a:active {
   color: white;
   text-decoration: none;
 }
-#fh5co-testimonials .box-testimony blockquote {
+#fh5co-media .box-testimony a:hover, #fh5co-media .box-testimony a:focus, #fh5co-media .box-testimony a:active {
+  color: white;
+  text-decoration: none;
+}
+#fh5co-testimonials .box-testimony blockquote, #fh5co-media .box-testimony blockquote {
   padding-left: 0;
   border-left: none;
   padding: 30px;
@@ -870,7 +874,7 @@ h1, h2, h3, h4, h5, h6 {
   -ms-border-radius: 7px;
   border-radius: 7px;
 }
-#fh5co-testimonials .box-testimony blockquote:after {
+#fh5co-testimonials .box-testimony blockquote:after, #fh5co-media .box-testimony blockquote:after {
   content: "";
   position: absolute;
   top: 100%;
@@ -881,39 +885,39 @@ h1, h2, h3, h4, h5, h6 {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
 }
-#fh5co-testimonials .box-testimony blockquote p {
+#fh5co-testimonials .box-testimony blockquote p, #fh5co-media .box-testimony blockquote p {
   font-style: italic;
   color: #fff;
 }
-#fh5co-testimonials .box-testimony .author {
+#fh5co-testimonials .box-testimony .author, #fh5co-media .box-testimony .author {
   line-height: 20px;
   color: black;
   font-size: 16px;
   margin-left: 20px;
   font-weight: 400;
 }
-#fh5co-testimonials .box-testimony .author a {
+#fh5co-testimonials .box-testimony .author a, #fh5co-media .box-testimony .author a {
   color: #52d3aa;
 }
-#fh5co-testimonials .box-testimony .author a:hover {
+#fh5co-testimonials .box-testimony .author a:hover, #fh5co-media .box-testimony .author a:hover {
   text-decoration: underline;
 }
-#fh5co-testimonials .box-testimony .author > figure {
+#fh5co-testimonials .box-testimony .author > figure, #fh5co-media .box-testimony .author > figure {
   float: left;
   margin-right: 10px;
 }
-#fh5co-testimonials .box-testimony .author > figure img {
+#fh5co-testimonials .box-testimony .author > figure img, #fh5co-media .box-testimony .author > figure img {
   width: 60px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
 }
-#fh5co-testimonials .box-testimony .author p {
+#fh5co-testimonials .box-testimony .author p, #fh5co-media .box-testimony .author p {
   float: left;
   margin-top: 10px;
 }
-#fh5co-testimonials .box-testimony .author .subtext {
+#fh5co-testimonials .box-testimony .author .subtext, #fh5co-media .box-testimony .author .subtext {
   display: block;
   color: rgba(0, 0, 0, 0.5);
   font-size: 16px;
