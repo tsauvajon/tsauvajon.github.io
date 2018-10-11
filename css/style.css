@@ -423,12 +423,20 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
   border-bottom: 1px dashed white;
 }
+/* black background for lisibility when hovering */
+#fh5co-home .text-inner h2:hover {
+  background: #00000055;
+  transition: all .6s;
+}
 #fh5co-home .text-inner h1 {
   font-size: 50px;
   color: white;
   margin: 0 0 20px 0;
 }
 #fh5co-home .text-inner h2 {
+  transition: all .6s;
+  padding-top: 22px;
+  padding-bottom: 35px;
   font-size: 28px;
   line-height: 38px;
   font-weight: 300;
