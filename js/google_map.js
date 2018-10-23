@@ -31,19 +31,24 @@ function init() {
     // Create the Google Map using out element and options defined above
     var map = new google.maps.Map(mapElement, mapOptions);
     
-    var addresses = ['Ghent'];
+    var addresses = ['31 bis avenue Saint-Lazare 34000 MONTPELLIER'];
 
     for (var x = 0; x < addresses.length; x++) {
         $.getJSON('//maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
-            var p = data.results[0].geometry.location
-            // Manual set
-            p.lat = 43.6240474;
-            p.lng = 3.8862023;
+            // Manual set if the query doesn't return the correct results
+            var p = {
+                lat: 43.6240474,
+                lng: 3.8862023
+            }
+            if (data.results[0] && data.results[0].geometry) {
+                p = data.results[0].geometry.location
+            }
             var latlng = new google.maps.LatLng(p.lat, p.lng);
             new google.maps.Marker({
                 position: latlng,
-                map: map,
-                icon: 'images/loc.png'
+                map: map
+                // ,
+                // icon: 'images/loc.png'
             });
 
         });
