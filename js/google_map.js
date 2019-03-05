@@ -5,15 +5,15 @@ function init() {
     // Basic options for a simple Google Map
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
     // var avenueSaintLazareMontpellier = new google.maps.LatLng(43.6240474, 3.8862023, 11);
-    // var macclesfield = new google.maps.LatLng(53.2611378, -2.1627397, 13);
-    var paris = new google.maps.LatLng(48.8588377, 2.2770203, 12);
+    var macclesfield = new google.maps.LatLng(53.2611378, -2.1627397, 13);
+    // var paris = new google.maps.LatLng(48.8588377, 2.2770203, 12);
     
     var mapOptions = {
         // How zoomed in you want the map to start at (always required)
-        zoom: 5,
+        zoom: 6,
 
         // The latitude and longitude to center the map (always required)
-        center: paris,
+        center: macclesfield,
 
         // How you would like to style the map. 
         scrollwheel: false,
@@ -29,7 +29,7 @@ function init() {
     var geocoder = new google.maps.Geocoder();
     
     var addresses = [
-        '31 bis avenue Saint-Lazare 34000 MONTPELLIER',
+        // '31 bis avenue Saint-Lazare 34000 MONTPELLIER',
         'Macclesfield, UK',
     ];
 
