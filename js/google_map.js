@@ -4,18 +4,15 @@ var google;
 function init() {
     // Basic options for a simple Google Map
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-    // var myLatlng = new google.maps.LatLng(40.71751, -73.990922);
-    var myLatlng = new google.maps.LatLng(43.6240474, 3.8862023, 11);
-    // 43.624047, 3.8862023
-    // 39.399872
-    // -8.224454
+    // var avenueSaintLazareMontpellier = new google.maps.LatLng(43.6240474, 3.8862023, 11);
+    var macclesfield = new google.maps.LatLng(53.2611378, -2.1627397, 13);
     
     var mapOptions = {
         // How zoomed in you want the map to start at (always required)
         zoom: 7,
 
         // The latitude and longitude to center the map (always required)
-        center: myLatlng,
+        center: macclesfield,
 
         // How you would like to style the map. 
         scrollwheel: false,
@@ -31,15 +28,23 @@ function init() {
     // Create the Google Map using out element and options defined above
     var map = new google.maps.Map(mapElement, mapOptions);
     
-    var addresses = ['31 bis avenue Saint-Lazare 34000 MONTPELLIER'];
+    var addresses = [
+        '31 bis avenue Saint-Lazare 34000 MONTPELLIER',
+        'Macclesfield, UK',
+    ];
 
     for (var x = 0; x < addresses.length; x++) {
         $.getJSON('//maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
             // Manual set if the query doesn't return the correct results
-            var p = {
+            var mtp = {
                 lat: 43.6240474,
                 lng: 3.8862023
             }
+            var mcsf = {
+                lat: 53.2611378,
+                lng: -2.1627397
+            }
+            var p = mcsf
             if (data.results[0] && data.results[0].geometry) {
                 p = data.results[0].geometry.location
             }
