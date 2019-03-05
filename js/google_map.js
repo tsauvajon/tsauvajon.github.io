@@ -34,7 +34,7 @@ function init() {
     ];
 
     for (var x = 0; x < addresses.length; x++) {
-        $.getJSON('//maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false', null, function (data) {
+        $.getJSON('//maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false&key=AIzaSyC8mmcdcEPVy7wcCum_GeKAgiL4GhCTII8', null, function (data) {
             // Manual set if the query doesn't return the correct results
             var mtp = {
                 lat: 43.6240474,
