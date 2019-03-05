@@ -20,14 +20,13 @@ function init() {
         styles: [{"featureType":"administrative.land_parcel","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"simplified"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"hue":"#f49935"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"hue":"#fad959"}]},{"featureType":"road.arterial","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"road.local","elementType":"labels","stylers":[{"visibility":"simplified"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"hue":"#a1cdfc"},{"saturation":30},{"lightness":49}]}]
     };
 
-    
-
     // Get the HTML DOM element that will contain your map 
     // We are using a div with id="map" seen below in the <body>
     var mapElement = document.getElementById('map');
 
     // Create the Google Map using out element and options defined above
     var map = new google.maps.Map(mapElement, mapOptions);
+    var geocoder = new google.maps.Geocoder();
     
     var addresses = [
         '31 bis avenue Saint-Lazare 34000 MONTPELLIER',
@@ -35,7 +34,7 @@ function init() {
     ];
 
     for (var x = 0; x < addresses.length; x++) {
-        $.getJSON('//maps.googleapis.com/maps/api/geocode/json?address='+addresses[x]+'&sensor=false&key=AIzaSyC8mmcdcEPVy7wcCum_GeKAgiL4GhCTII8', null, function (data) {
+        geocoder.geocode({ address: addresses[x] }, function (results) {
             // Manual set if the query doesn't return the correct results
             var mtp = {
                 lat: 43.6240474,
@@ -48,20 +47,20 @@ function init() {
             var p = mcsf
 
             console.log('google maps search results:')
-            console.log(data.results[0])
+            console.log(results[0])
 
-            if (data.results[0] && data.results[0].geometry) {
-                p = data.results[0].geometry.location
+            if (results[0] && results[0].geometry) {
+                p = results[0].geometry.location
             }
-            var latlng = new google.maps.LatLng(p.lat, p.lng);
+            // var latlng = new google.maps.LatLng(p.lat, p.lng);
             new google.maps.Marker({
-                position: latlng,
+                position: p,
                 map: map,
                 icon: 'images/moiloc.png'
             });
 
         });
     }
-    
 }
+
 google.maps.event.addDomListener(window, 'load', init);
