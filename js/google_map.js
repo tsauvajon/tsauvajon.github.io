@@ -45,6 +45,10 @@ function init() {
                 lng: -2.1627397
             }
             var p = mcsf
+
+            console.log('google maps search results:')
+            console.log(data.results[0])
+
             if (data.results[0] && data.results[0].geometry) {
                 p = data.results[0].geometry.location
             }
